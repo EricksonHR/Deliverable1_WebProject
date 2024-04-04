@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 # Create your models here.
@@ -29,3 +30,29 @@ class Genre(models.Model):
     def __str__(self):
         return self.genre_name
 
+
+class Name(models.Model):
+    actor_name = models.CharField(max_length=100)
+    birth_date = models.DateField()
+    category = models.CharField(max_length=100)
+    awards = models.ManyToManyField('Award')
+
+    def __str__(self):
+        return self.actor_name
+
+
+class Budget(models.Model):
+    movie = models.ManyToManyField(Title)
+    amount = models.IntegerField()
+
+    def _str_(self):
+        return self.movie
+
+
+class Rating(models.Model):
+    movie_title = models.ManyToManyField(Title)
+    rating_value = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(10)])
+    num_votes = models.IntegerField()
+
+    def _str_(self):
+        return self.movie_title
