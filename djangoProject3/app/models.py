@@ -28,24 +28,24 @@ class Assignment(models.Model):
         return self.name
 
 
-class Titles(models.Model):
+class Title(models.Model):
     title = models.CharField(max_length=100)
-    awards = models.ManyToManyField('Awards')
+    award = models.ManyToManyField('Award')
     release_date = models.DateField()
-    genre = models.ManyToManyField('Genres')
+    genre = models.ManyToManyField('Genre')
     producer = models.CharField(max_length=50)
 
     def __str__(self):
         return self.title
 
-class Awards(models.Model):
+class Award(models.Model):
     award_name = models.CharField(max_length=100)
     award_year = models.IntegerField()
 
     def __str__(self):
         return self.award_name
 
-class Genres(models.Model):
+class Genre(models.Model):
     genre_name = models.CharField(max_length=100)
 
     def __str__(self):
