@@ -1,10 +1,14 @@
+body {
+    background-image: url("fondo.webp");
+    background-size: cover;
+
+}
+
 nav .navbar-brand
 {
-    /* size for brand */
     font-size: xx-large;
 }
 
-/* colors for brand */
 nav .navbar-brand .blue
 {
     color: #537fbe;
@@ -24,24 +28,34 @@ nav .navbar-brand .green
 
 main .form-control
 {
-    /* center form controls */
     display: inline-block;
-
-    /* override Bootstrap's 100% width for form controls */
     width: auto;
 }
 
 main
 {
-    /* scroll horizontally as needed */
     overflow-x: auto;
-
-    /* center contents */
     text-align: center;
+}
+
+main.form-group {
+    margin-bottom: 15px;
 }
 
 main img
 {
-    /* constrain images on small screens */
     max-width: 100%;
+}
+
+.form-group1
+{
+    overflow-x: auto;
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 300px;
+    height: auto;
+    display: inline-block;
+    border-radius: 10px;
 }
